@@ -10,12 +10,18 @@
   <body>
     
 
-    <h1>MORPION</h1>
+    <h1><button id="great_reset">MORPION</button></h1>
 
     <div id="dont">
       <div id="tour">Le premier joueur est <img class="white" src="circle.svg" alt="" width="20px" height="20px"></div>
 
       <button id="reset">RESET</button>
+
+      <div id="score">
+        <div id="joueur_1"><img class="white" src="circle.svg" alt="" width="20px" height="20px"> : 0</div>
+        <div id="draw">Égalité: 0</div>
+        <div id="joueur_2"><img class="white" src="circle_2.svg" alt="" width="20px" height="20px"> : 0</div>
+      </div>
     </div>
     
     <div id="keys">
@@ -40,6 +46,16 @@
         
     </div>
 
+    <div id="advice">
+      <h1>X</h1>
+      Vous pouvez cliquez sur le logo Morpion pour tout reinitialiser.
+      <br>
+      <br>
+      <br>
+      En cliquant sur reset, vous reinitialiser le tableau;  
+    </div>
+
     <script type="module" src="/main.js"></script>
   </body>
 </html>
+
