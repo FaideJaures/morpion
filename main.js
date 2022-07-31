@@ -4,6 +4,21 @@ let player_2;
 let move_1 = [];
 let move_2 = [];
 
+var gagne_1 = 0;
+var gagne_2 = 1;
+var nowin = 1;
+
+document.addEventListener("click", ()=>{
+  document.getElementById("advice").style.display = "none";
+})
+document.getElementById("great_reset").addEventListener("click", ()=>{
+  document.location.reload(true);
+})
+
+var gagnant_1 = document.getElementById("joueur_1");
+var gagnant_2 = document.getElementById("joueur_2");
+var nogagnant = document.getElementById("draw");
+
 let A = document.getElementById("A");
 let B = document.getElementById("B");
 let C = document.getElementById("C");
@@ -69,6 +84,8 @@ function getTouche_1(X, player){
     A.style.backgroundColor = "aqua";
     B.style.backgroundColor = "aqua";
     C.style.backgroundColor = "aqua";
+    gagnant_1.innerHTML =  gagne_1++;
+    gagnant_1.innerHTML = "<img src=\"circle.svg\" style =\"filter: invert(1)\" width=\"20px\" height=\"20px\">" + " : " + gagne_1++;
   }
   else if( X.includes("D") && X.includes("E") && X.includes("F") ){
     tour_text.innerHTML = "Le joueur " + "<img src=\"circle.svg\" style =\"filter: invert(1)\" width=\"20px\" height=\"20px\">" + " à gagné";
@@ -76,6 +93,8 @@ function getTouche_1(X, player){
     D.style.backgroundColor = "aqua";
     E.style.backgroundColor = "aqua";
     F.style.backgroundColor = "aqua";
+    gagnant_1.innerHTML =  gagne_1++;
+    gagnant_1.innerHTML = "<img src=\"circle.svg\" style =\"filter: invert(1)\" width=\"20px\" height=\"20px\">" + " : " + gagne_1++;
   }
   else if( X.includes("G") && X.includes("H") && X.includes("I") ){
     tour_text.innerHTML = "Le joueur " + "<img src=\"circle.svg\" style =\"filter: invert(1)\" width=\"20px\" height=\"20px\">" + " à gagné";
@@ -83,6 +102,8 @@ function getTouche_1(X, player){
     G.style.backgroundColor = "aqua";
     H.style.backgroundColor = "aqua";
     I.style.backgroundColor = "aqua";
+    gagnant_1.innerHTML =  gagne_1++;
+    gagnant_1.innerHTML = "<img src=\"circle.svg\" style =\"filter: invert(1)\" width=\"20px\" height=\"20px\">" + " : " + gagne_1++;
   }
   else if( X.includes("A") && X.includes("D") && X.includes("G") ){
     tour_text.innerHTML = "Le joueur " + "<img src=\"circle.svg\" style =\"filter: invert(1)\" width=\"20px\" height=\"20px\">" + " à gagné";
@@ -90,6 +111,8 @@ function getTouche_1(X, player){
     A.style.backgroundColor = "aqua";
     D.style.backgroundColor = "aqua";
     G.style.backgroundColor = "aqua";
+    gagnant_1.innerHTML =  gagne_1++;
+    gagnant_1.innerHTML = "<img src=\"circle.svg\" style =\"filter: invert(1)\" width=\"20px\" height=\"20px\">" + " : " + gagne_1++;
   }
   else if( X.includes("B") && X.includes("E") && X.includes("H") ){
     tour_text.innerHTML = "Le joueur " + "<img src=\"circle.svg\" style =\"filter: invert(1)\" width=\"20px\" height=\"20px\">" + " à gagné";
@@ -97,6 +120,8 @@ function getTouche_1(X, player){
     B.style.backgroundColor = "aqua";
     E.style.backgroundColor = "aqua";
     H.style.backgroundColor = "aqua";
+    gagnant_1.innerHTML =  gagne_1++;
+    gagnant_1.innerHTML = "<img src=\"circle.svg\" style =\"filter: invert(1)\" width=\"20px\" height=\"20px\">" + " : " + gagne_1++;
   }
   else if( X.includes("C") && X.includes("F") && X.includes("I") ){
     tour_text.innerHTML = "Le joueur " + "<img src=\"circle.svg\" style =\"filter: invert(1)\" width=\"20px\" height=\"20px\">" + " à gagné";
@@ -104,6 +129,8 @@ function getTouche_1(X, player){
     C.style.backgroundColor = "aqua";
     F.style.backgroundColor = "aqua";
     I.style.backgroundColor = "aqua";
+    gagnant_1.innerHTML =  gagne_1++;
+    gagnant_1.innerHTML = "<img src=\"circle.svg\" style =\"filter: invert(1)\" width=\"20px\" height=\"20px\">" + " : " + gagne_1++;
   }
   else if( X.includes("A") && X.includes("E") && X.includes("I") ){
     tour_text.innerHTML = "Le joueur " + "<img src=\"circle.svg\" style =\"filter: invert(1)\" width=\"20px\" height=\"20px\">" + " à gagné";
@@ -111,6 +138,8 @@ function getTouche_1(X, player){
     A.style.backgroundColor = "aqua";
     E.style.backgroundColor = "aqua";
     I.style.backgroundColor = "aqua";
+    gagnant_1.innerHTML =  gagne_1++;
+    gagnant_1.innerHTML = "<img src=\"circle.svg\" style =\"filter: invert(1)\" width=\"20px\" height=\"20px\">" + " : " + gagne_1++;
   }
   else if( X.includes("C") && X.includes("E") && X.includes("G") ){
     tour_text.innerHTML = "Le joueur " + "<img src=\"circle.svg\" style =\"filter: invert(1)\" width=\"20px\" height=\"20px\">" + " à gagné";
@@ -118,12 +147,14 @@ function getTouche_1(X, player){
     C.style.backgroundColor = "aqua";
     E.style.backgroundColor = "aqua";
     G.style.backgroundColor = "aqua";
+    gagnant_1.innerHTML = "<img src=\"circle.svg\" style =\"filter: invert(1)\" width=\"20px\" height=\"20px\">" + " : " + gagne_1++;
   }
   else if(X.length > 4){
     tour_text.innerHTML = "Match nul";
     for(let i = 0; i < btn.length; i++){
       btn[i].style.backgroundColor = "red";
     }
+    nogagnant.innerHTML = "Égalité: " + nowin++;
   }
 }
 
@@ -135,6 +166,7 @@ function getTouche_2(X, player){
     A.style.backgroundColor = "aquamarine";
     B.style.backgroundColor = "aquamarine";
     C.style.backgroundColor = "aquamarine";
+    gagnant_2.innerHTML = "<img src=\"circle_2.svg\" style =\"filter: invert(1)\" width=\"20px\" height=\"20px\">" + " : " + gagne_2++;
   }
   else if( X.includes("D") && X.includes("E") && X.includes("F") ){
     tour_text.innerHTML = "Le joueur " + "<img src=\"circle_2.svg\" style =\"filter: invert(1)\" width=\"20px\" height=\"20px\">" + " à gagné";
@@ -142,6 +174,7 @@ function getTouche_2(X, player){
     D.style.backgroundColor = "aquamarine";
     E.style.backgroundColor = "aquamarine";
     F.style.backgroundColor = "aquamarine";
+    gagnant_2.innerHTML = "<img src=\"circle_2.svg\" style =\"filter: invert(1)\" width=\"20px\" height=\"20px\">" + " : " + gagne_2++;
   }
   else if( X.includes("G") && X.includes("H") && X.includes("I") ){
     tour_text.innerHTML = "Le joueur " + "<img src=\"circle_2.svg\" style =\"filter: invert(1)\" width=\"20px\" height=\"20px\">" + " à gagné";
@@ -149,6 +182,7 @@ function getTouche_2(X, player){
     G.style.backgroundColor = "aquamarine";
     H.style.backgroundColor = "aquamarine";
     I.style.backgroundColor = "aquamarine";
+    gagnant_2.innerHTML = "<img src=\"circle_2.svg\" style =\"filter: invert(1)\" width=\"20px\" height=\"20px\">" + " : " + gagne_2++;
   }
   else if( X.includes("A") && X.includes("D") && X.includes("G") ){
     tour_text.innerHTML = "Le joueur " + "<img src=\"circle_2.svg\" style =\"filter: invert(1)\" width=\"20px\" height=\"20px\">" + " à gagné";
@@ -156,6 +190,7 @@ function getTouche_2(X, player){
     A.style.backgroundColor = "aquamarine";
     D.style.backgroundColor = "aquamarine";
     G.style.backgroundColor = "aquamarine";
+    gagnant_2.innerHTML = "<img src=\"circle_2.svg\" style =\"filter: invert(1)\" width=\"20px\" height=\"20px\">" + " : " + gagne_2++;
   }
   else if( X.includes("B") && X.includes("E") && X.includes("H") ){
     tour_text.innerHTML = "Le joueur " + "<img src=\"circle_2.svg\" style =\"filter: invert(1)\" width=\"20px\" height=\"20px\">" + " à gagné";
@@ -163,6 +198,7 @@ function getTouche_2(X, player){
     B.style.backgroundColor = "aquamarine";
     E.style.backgroundColor = "aquamarine";
     H.style.backgroundColor = "aquamarine";
+    gagnant_2.innerHTML = "<img src=\"circle_2.svg\" style =\"filter: invert(1)\" width=\"20px\" height=\"20px\">" + " : " + gagne_2++;
   }
   else if( X.includes("C") && X.includes("F") && X.includes("I") ){
     tour_text.innerHTML = "Le joueur " + "<img src=\"circle_2.svg\" style =\"filter: invert(1)\" width=\"20px\" height=\"20px\">" + " à gagné";
@@ -170,6 +206,7 @@ function getTouche_2(X, player){
     C.style.backgroundColor = "aquamarine";
     F.style.backgroundColor = "aquamarine";
     I.style.backgroundColor = "aquamarine";
+    gagnant_2.innerHTML = "<img src=\"circle_2.svg\" style =\"filter: invert(1)\" width=\"20px\" height=\"20px\">" + " : " + gagne_2++;
   }
   else if( X.includes("A") && X.includes("E") && X.includes("I") ){
     tour_text.innerHTML = "Le joueur " + "<img src=\"circle_2.svg\" style =\"filter: invert(1)\" width=\"20px\" height=\"20px\">" + " à gagné";
@@ -177,6 +214,7 @@ function getTouche_2(X, player){
     A.style.backgroundColor = "aquamarine";
     E.style.backgroundColor = "aquamarine";
     I.style.backgroundColor = "aquamarine";
+    gagnant_2.innerHTML = "<img src=\"circle_2.svg\" style =\"filter: invert(1)\" width=\"20px\" height=\"20px\">" + " : " + gagne_2++;
   }
   else if( X.includes("C") && X.includes("E") && X.includes("G") ){
     tour_text.innerHTML = "Le joueur " + "<img src=\"circle_2.svg\" style =\"filter: invert(1)\" width=\"20px\" height=\"20px\">" + " à gagné";
@@ -184,6 +222,7 @@ function getTouche_2(X, player){
     C.style.backgroundColor = "aquamarine";
     E.style.backgroundColor = "aquamarine";
     G.style.backgroundColor = "aquamarine";
+    gagnant_2.innerHTML = "<img src=\"circle_2.svg\" style =\"filter: invert(1)\" width=\"20px\" height=\"20px\">" + " : " + gagne_2++;
   }
 }
 
@@ -192,6 +231,8 @@ function win(){
     btn[i].disabled = "true";
   }
 }
+
+
 
 
 function reset(){
@@ -208,9 +249,8 @@ function reset(){
       btn[i].disabled = false;
       btn[i].style.backgroundColor = "white";
     }
+    tour = true;
   })
-
-  
 }
 
 reset();
